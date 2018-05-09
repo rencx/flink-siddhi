@@ -65,7 +65,7 @@ object CEPPipeline {
       .returnAsMap("AlertStream")
 
     alertStream.map(new MapFunction[java.util.Map[String, Object], String] {
-      override def map(value: util.Map[String, Object]): String = {
+      override def map(value: java.util.Map[String, Object]): String = {
         value.toString
       }
     }).addSink(kafkaProducer)
